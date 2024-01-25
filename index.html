@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATALOGO DE PRODUCTOS DE FIX SHOP BIKE</title>
+    <link rel="stylesheet" href="https://unpkg.com/html2pdf.js@0.9.3/dist/html2pdf.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            max-width: 45%;
+            box-sizing: border-box;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .product:hover {
+            transform: scale(1.1);
+        }
+
+        .product img {
+            max-width: 100%;
+            max-height: 150px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: blue;
+            text-align: center;
+            padding: 10px 20px;
+            border: 2px solid black;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Estilo opcional para ajustar la posición de la imagen */
+        .floating-image {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>CATALOGO DE PRODUCTOS DE FIX SHOP BIKE</h1>
+
+<!-- Sección de productos -->
+<div class="section">
+    <!-- Producto 1 -->
+    <div class="product">
+        <img src="asiento.jpg" alt="Asiento de gel">
+        <h2>Asiento de gel</h2>
+        <h2>ATOM</h2>
+        <p>Precio: S/ 40.00</p>
+        <button onclick="addToCart('Asiento de gel', 40.00)">Añadir al Carrito</button>
+    </div>
+
+    <!-- Agrega aquí los demás productos -->
+
+</div>
+
+<!-- Carrito de compras -->
+<h2>Carrito de Compras</h2>
+<div id="cart"></div>
+
+<!-- Opciones de pago -->
+<div id="paymentOptions" style="display: none;">
+    <h2>Opciones de Pago</h2>
+    <button onclick="payWithCard()">Pagar con Tarjeta Visa</button>
+    <button onclick="generateVoucher()">Generar Comprobante (Voucher)</button>
+</div>
+
+<!-- Panel de Administración -->
+<div id="adminPanel" style="display: none;">
+    <h2>Panel de Administración</h2>
+    <form id="updateForm">
+        <label for="productName">Nombre del Producto:</label>
+        <input type="text" id="productName" required>
+
+        <label for="newPrice">Nuevo Precio (S/):</label>
+        <input type="number" id="newPrice" step="0.01" required>
+
+        <button type="button" onclick="updatePrice()">Actualizar Precio</button>
+    </form>
+</div>
+
+<!-- Biblioteca html2pdf.js -->
+<script src="https://unpkg.com/html2pdf.js@0.9.3/dist/html2pdf.bundle.js"></script>
+
+<script>
+    var cart = [];
+
+    function addToCart(productName, price) {
+        cart.push({ name: productName, price: price });
+        updateCart();
+    }
+
+    function updateCart() {
+        var cartContainer = document.getElementById('cart');
+        cartContainer.innerHTML = '';
+
+        var total = 0;
+
+        for (var i = 0; i < cart.length; i++) {
+            var item = cart[i];
+            total += item.price;
+
+            var cartItem = document.createElement('div');
+            cartItem.innerHTML = '<p>' + item.name + ' - S/ ' + item.price.toFixed(2) + '</p>';
+            cartContainer.appendChild(cartItem);
+        }
+
+        cartContainer.innerHTML += '<hr>';
+        cartContainer.innerHTML += '<p>Total: S/ ' + total.toFixed(2) + '</p>';
+
+        if (cart.length > 0) {
+            document.getElementById('paymentOptions').style.display = 'block';
+        }
+    }
+
+    function payWithCard() {
+        alert('Pagando con Tarjeta Visa. ¡Gracias por tu compra!');
+        generateReceipt();
+        resetCart();
+    }
+
+    function generateVoucher() {
+        alert('Generando Comprobante (Voucher). ¡Gracias por tu compra!');
+        generateReceipt();
+        resetCart();
+    }
+
+    function generateReceipt() {
+        var options = {
+            filename: 'comprobante.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        var element = document.body;
+
+        html2pdf().from(element).set(options).save();
+    }
+
+    function resetCart() {
+        cart = [];
+        updateCart();
+        document.getElementById('paymentOptions').style.display = 'none';
+    }
+
+    // Función para mostrar/ocultar el panel de administración
+    function toggleAdminPanel() {
+        var adminPanel = document.getElementById('adminPanel');
+        adminPanel.style.display = (adminPanel.style.display === 'none') ? 'block' : 'none';
+    }
+
+    // Mostrar/ocultar el panel de administración al presionar cierta combinación de teclas
+    document.addEventListener('keydown', function (event) {
+        if (event.ctrlKey && event.altKey && event.code === 'KeyP') {
+            toggleAdminPanel();
+        }
+    });
+
+    // Función para actualizar el precio del producto
+    function updatePrice() {
+        var productName = document.getElementById('productName').value;
+        var newPrice = parseFloat(document.getElementById('newPrice').value);
+
+        // Actualizar el precio del producto (puedes mejorar esta lógica según tus necesidades)
+        var productElement = document.getElementById('product' + productName);
+        if (productElement) {
+            var priceElement = productElement.querySelector('p');
+            if (priceElement) {
+                priceElement.innerHTML = 'Precio: S/ ' + newPrice.toFixed(2);
+            }
+        }
+
+        // Ocultar el panel de administración después de actualizar el precio
+        document.getElementById('adminPanel').style.display = 'none';
+    }
+</script>
+
+<!-- Imagen flotante de WhatsApp -->
+<a href="https://wa.me/955374354" target="_blank" class="floating-image">
+    <img src="Boton Whatsapp.png" alt="Consulta por WhatsApp" width="280" height="99">
+</a>
+
+</body>
+</html>
