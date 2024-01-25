@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CATALOGO DE PRODUCTOS DE FIX SHOP BIKE</title>
-    <link rel="stylesheet" href="https://unpkg.com/html2pdf.js@0.9.3/dist/html2pdf.css">
+    <link rel="stylesheet" href="https://unpkg.com/html2pdf.js@0.10.1/dist/html2pdf.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -50,6 +50,10 @@
     </style>
 </head>
 <body>
+<!-- Imagen flotante de WhatsApp -->
+<a href="https://wa.me/955374354" target="_blank" class="floating-image">
+    <img src="Boton Whatsapp.png" alt="Consulta por WhatsApp" width="280" height="99">
+</a>
 
 <h1>CATALOGO DE PRODUCTOS DE FIX SHOP BIKE</h1>
 
@@ -64,8 +68,95 @@
         <button onclick="addToCart('Asiento de gel', 40.00)">Añadir al Carrito</button>
     </div>
 
-    <!-- Agrega aquí los demás productos -->
+    <!-- Producto 2 -->
+    <div class="product">
+        <img src="botonb.jpg" alt="Boton Bracker">
+        <h2>Boton Bracker</h2>
+        <h2>ATOM</h2>
+        <p>Precio: S/ 60.00</p>
+        <button onclick="addToCart('Boton Bracker', 60.00)">Añadir al Carrito</button>
+    </div>
 
+    <!-- Producto 3 -->
+    <div class="product">
+        <img src="casco1.png" alt="Casco rojo">
+        <h2>Casco rojo</h2>
+        <h2>ATOM</h2>
+        <p>Precio: S/ 80.00</p>
+        <button onclick="addToCart('Casco rojo', 80.00)">Añadir al Carrito</button>
+    </div>
+
+    <!-- Producto 4 -->
+    <div class="product">
+        <img src="ejec.jpg" alt="Eje cuadrado">
+        <h2>Eje cuadrado</h2>
+        <h2>ATOM</h2>
+        <p>Precio: S/ 10.00</p>
+        <button onclick="addToCart('Eje cuadrado', 10.00)">Añadir al Carrito</button>
+    </div>
+
+    <!-- Producto 5 -->
+    <div class="product">
+        <img src="extractorcaden.jpg" alt="Extractor de cadena">
+        <h2>Extractor de cadena</h2>
+        <h2>ATOM</h2>
+        <p>Precio: S/ 15.00</p>
+        <button onclick="addToCart('Extractor de cadena', 15.00)">Añadir al Carrito</button>
+    </div>
+
+    <!-- Producto 6 -->
+    <div class="product">
+        <img src="extractorkata.jpg" alt="Extractor de catalina">
+        <h2>Extractor de catalina</h2>
+        <h2>ATOM</h2>
+        <p>Precio: S/ 17.00</p>
+        <button onclick="addToCart('Extractor de catalina', 17.00)">Añadir al Carrito</button>
+    </div>
+
+    <!-- Producto 7 -->
+    <div class="product">
+        <img src="pedalclic.jpg" alt="Pedal-clic">
+        <h2>Pedal-clic</h2>
+        <h2>ATOM</h2>
+        <p>Precio: S/ 115.00</p>
+        <button onclick="addToCart('Pedal-clic', 115.00)">Añadir al Carrito</button>
+    </div>
+
+    <!-- Producto 8 -->
+    <div class="product">
+        <img src="puno rojo.jpg" alt="Manigueta Rojo">
+        <h2>Manigueta Rojo</h2>
+        <h2>ATOM</h2>
+        <p>Precio: S/ 35.00</p>
+        <button onclick="addToCart('Manigueta Rojo', 35.00)">Añadir al Carrito</button>
+    </div>
+
+    <!-- Producto 9 -->
+    <div class="product">
+        <img src="puño plomo.jpg" alt="Manigueta plomo">
+        <h2>Manigueta plomo</h2>
+        <h2>ATOM</h2>
+        <p>Precio: S/ 25.00</p>
+        <button onclick="addToCart('Manigueta plomo', 25.00)">Añadir al Carrito</button>
+    </div>
+
+    <!-- Producto 10 -->
+    <div class="product">
+        <img src="puño azul.jpg" alt="Puño azul">
+        <h2>Puño azul</h2>
+        <h2>ATOM</h2>
+        <p>Precio: S/ 25.00</p>
+        <button onclick="addToCart('Puño azul', 25.00)">Añadir al Carrito</button>
+    </div>
+
+    <!-- Producto 11 -->
+    <div class="product">
+        <img src="Falongap.jpg" alt="Freno alonga plateado">
+        <h2>Freno alonga plateado</h2>
+        <h2>ATOM</h2>
+        <p>Precio: S/ 50.00</p>
+        <button onclick="addToCart('Freno alonga plateado', 50.00)">Añadir al Carrito</button>
+    </div>
 </div>
 
 <!-- Carrito de compras -->
@@ -94,7 +185,7 @@
 </div>
 
 <!-- Biblioteca html2pdf.js -->
-<script src="https://unpkg.com/html2pdf.js@0.9.3/dist/html2pdf.bundle.js"></script>
+<script src="https://unpkg.com/html2pdf.js@0.10.1/dist/html2pdf.bundle.js"></script>
 
 <script>
     var cart = [];
@@ -140,14 +231,18 @@
     }
 
     function generateReceipt() {
+        var cartContent = document.getElementById('cart').cloneNode(true);
+
         var options = {
+            margin: 10,
             filename: 'comprobante.pdf',
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: { scale: 2 },
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
         };
 
-        var element = document.body;
+        var element = document.createElement('div');
+        element.appendChild(cartContent);
 
         html2pdf().from(element).set(options).save();
     }
@@ -189,11 +284,5 @@
         document.getElementById('adminPanel').style.display = 'none';
     }
 </script>
-
-<!-- Imagen flotante de WhatsApp -->
-<a href="https://wa.me/955374354" target="_blank" class="floating-image">
-    <img src="Boton Whatsapp.png" alt="Consulta por WhatsApp" width="280" height="99">
-</a>
-
 </body>
 </html>
