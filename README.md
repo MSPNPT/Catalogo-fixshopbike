@@ -1,2 +1,2 @@
 # contabilidad
-https://mspnpt.github.io/Catalogo-fixshopbike/
+https://mspnpt.github.io/contabilidad/
