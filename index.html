@@ -1,131 +1,352 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEAM CONTABLE</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #003366;
-            color: #ffffff;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-        .container {
-            padding: 2rem;
-        }
-        .hero {
-            background-color: #40E0D0; /* Fondo en verde */ center/cover;
-            height: 300px;
-            color: #000000;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            margin: 0;
-        }
-        .section {
-            padding: 2rem;
-            background-color: #ffffff;
-            margin-bottom: 1rem;
-        }
-        .section h2 {
-            margin-top: 0;
-        }
-        .footer {
-            background-color: #003366;
-            color: #ffffff;
-            text-align: center;
-            padding: 1rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PERZOX CONTADORES</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f5f7fa;
+    color:#333;
+}
+
+/* HEADER */
+header{
+    background:#003366;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+nav ul{
+    list-style:none;
+    padding:0;
+    margin:10px 0 0 0;
+}
+
+nav ul li{
+    display:inline-block;
+    margin:0 10px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(to right, #00bcd4, #009688);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+.hero img{
+    margin-top:20px;
+    border-radius:10px;
+    max-width:90%;
+}
+
+/* CONTAINER */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+/* SECTIONS */
+.section{
+    background:white;
+    margin:20px 0;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.card{
+    background:#f0f4f8;
+    padding:15px;
+    border-radius:10px;
+}
+
+/* NOTICIAS */
+.news img{
+    width:100%;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+/* FOOTER */
+footer{
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:20px;
+}
+
+/* BOTÓN WHATSAPP */
+.whatsapp{
+    display:inline-block;
+    background:#25D366;
+    color:white;
+    padding:10px 15px;
+    border-radius:5px;
+    text-decoration:none;
+    margin-top:10px;
+}
+#courses p{
+    margin-bottom:10px;
+    line-height:1.5;
+}
+
+#courses 
+  .card h3{
+    color:#003366;
+    font-size:16px;
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>TEAM CONTABLE</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">INICIO</a></li>
-                <li><a href="#about">NOTICIAS</a></li>
-                <li><a href="#services">SERVICIOS</a></li>
-                <li><a href="#contact">CONTACTO</a></li>
-                <li><a href="#facturacion">FACTURACIÓN</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <div class="hero">
-        <h1>ASESORIA Y CONSULTURIA TEAM CONTABLE</h1>
-        <I1><img src="https://cdn.www.gob.pe/uploads/document/file/6209023/939519-remate-2.jpg" width="300"</I1>
+<header>
+    <h1>PERZOX CONTADORES</h1>
+    <nav>
+        <ul>
+            <li><a href="#home">INICIO</a></li>
+            <li><a href="#services">SERVICIOS</a></li>
+            <li><a href="#courses">CURSOS</a></li>
+            <li><a href="#contact">CONTACTO</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>ASESORÍA Y CONSULTORÍA CONTABLE</h1>
+    <p>Soluciones para micro, pequeñas, medianas y grandes empresas del Perú</p>
+    <img src="https://cdn.www.gob.pe/uploads/document/file/6209023/939519-remate-2.jpg" alt="Contabilidad">
+</div>
+
+<div class="container">
+
+<!-- INICIO -->
+<section id="home" class="section">
+    <h2>Bienvenido a Perzox Contadores</h2>
+    <p>Brindamos servicios contables, tributarios y financieros con responsabilidad, eficiencia y compromiso empresarial.</p>
+</section>
+
+<!-- SERVICIOS -->
+<section id="services" class="section">
+    <h2>Nuestros Servicios Contables</h2>
+
+    <p>
+        Brindamos soluciones integrales para empresas, emprendedores y personas naturales, 
+        garantizando cumplimiento tributario, orden financiero y crecimiento sostenible.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>📊 Contabilidad de Empresas</h3>
+            <p>Gestión contable completa para negocios de todos los tamaños.</p>
+            <ul>
+                <li>Registro de compras y ventas</li>
+                <li>Libros contables electrónicos</li>
+                <li>Estados financieros</li>
+                <li>Balance general y resultados</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>🧾 Asesoría Empresarial</h3>
+            <p>Orientación para mejorar la rentabilidad y toma de decisiones.</p>
+            <ul>
+                <li>Análisis financiero</li>
+                <li>Evaluación de costos</li>
+                <li>Planeamiento tributario</li>
+                <li>Optimización de utilidades</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>📂 Regularización Contable</h3>
+            <p>Ordenamos tu contabilidad atrasada o desactualizada.</p>
+            <ul>
+                <li>Revisión de periodos anteriores</li>
+                <li>Corrección de declaraciones</li>
+                <li>Actualización de libros contables</li>
+                <li>Levantamiento de observaciones SUNAT</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>🧾 Emisión de Comprobantes</h3>
+            <p>Gestión de comprobantes electrónicos autorizados por SUNAT.</p>
+            <ul>
+                <li>Facturas electrónicas</li>
+                <li>Boletas de venta</li>
+                <li>Recibos por honorarios</li>
+                <li>Notas de crédito y débito</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>💼 Planillas y RR.HH.</h3>
+            <p>Administración completa de trabajadores y obligaciones laborales.</p>
+            <ul>
+                <li>Elaboración de planillas</li>
+                <li>Boletas de pago</li>
+                <li>CTS, gratificaciones y vacaciones</li>
+                <li>Liquidaciones de beneficios sociales</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>🏦 Asesoría Tributaria SUNAT</h3>
+            <p>Cumplimiento y optimización de obligaciones tributarias.</p>
+            <ul>
+                <li>Declaraciones mensuales PDT / SIRE</li>
+                <li>Declaración anual de renta</li>
+                <li>Fiscalizaciones SUNAT</li>
+                <li>Fraccionamientos y deudas tributarias</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<!-- CURSOS -->
+<section id="courses" class="section">
+    <h2>📚 Cursos Contables Gratuitos</h2>
+
+    <p>
+        Brindamos cursos de capacitación 100% gratuitos en temas contables y tributarios
+        para estudiantes, emprendedores y profesionales que deseen mejorar sus conocimientos.
+    </p>
+
+    <p style="font-weight:bold; color:#003366;">
+        🎓 Los cursos son gratuitos. Certificado opcional: S/ 20.00
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🧾 Emisión de Comprobantes de Pago</h3>
+            <p>Aprende a emitir facturas, boletas y notas electrónicas según SUNAT.</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 Declaración PDT 621</h3>
+            <p>Registro y declaración del IGV-Renta mensual de forma correcta en SUNAT.</p>
+        </div>
+
+        <div class="card">
+            <h3>📑 Declaración PDT 601</h3>
+            <p>Elaboración de planillas electrónicas y declaración de trabajadores.</p>
+        </div>
+
+        <div class="card">
+            <h3>🏦 Declaración AFP NET</h3>
+            <p>Proceso de pago y declaración de aportes previsionales en AFP NET.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎓 Certificación Contable</h3>
+            <p>Entrega de certificado digital o físico al finalizar el curso.</p>
+        </div>
+
+        <div class="card">
+            <h3>💼 Curso de Contabilidad Básica</h3>
+            <p>Introducción a la contabilidad para emprendedores y principiantes.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contact" class="section">
+    <h2>Contacto</h2>
+    <p><strong>Celular:</strong> +51 955 374 354</p>
+    <p><strong>Facebook:</strong> Perzox Contadores</p>
+
+    <a class="whatsapp" href="https://wa.me/51955374354" target="_blank">
+        Enviar mensaje por WhatsApp
+    </a>
+</section>
+
+</div>
+
+<footer style="background:#003366; color:white; padding:30px 20px; text-align:center;">
+
+    <h3 style="margin:0;">Perzox Contadores</h3>
+    <p style="margin:8px 0;">
+        Asesoría contable, tributaria y financiera para empresas del Perú
+    </p>
+
+    <p style="margin:10px 0;">
+        📍 Mala, Cañete - Lima | 📞 +51 955 374 354
+    </p>
+
+    <p style="margin:10px 0;">
+        📧 contacto@perzoxcontadores.com
+    </p>
+
+    <!-- REDES SOCIALES -->
+    <div style="margin:20px 0;">
+        <a href="https://wa.me/51955374354" target="_blank"
+           style="margin:0 10px; color:#25D366; text-decoration:none; font-weight:bold;">
+            WhatsApp
+        </a>
+
+        <a href="https://www.facebook.com/people/Perzox-Contadores/100090253411513/?sk=about" target="_blank"
+           style="margin:0 10px; color:#1877F2; text-decoration:none; font-weight:bold;">
+            Facebook
+        </a>
+
+        <a href="https://instagram.com" target="_blank"
+           style="margin:0 10px; color:#E1306C; text-decoration:none; font-weight:bold;">
+            Instagram
+        </a>
+
+        <a href="https://tiktok.com" target="_blank"
+           style="margin:0 10px; color:#ffffff; text-decoration:none; font-weight:bold;">
+            TikTok
+        </a>
     </div>
 
-    <div class="container">
-        <section id="home" class="section">
-            <h2>BIENVENIDO A TEAM CONTABLE</h2>
-            <p>Somos un equipo que busca asesorar a los empresarios de las micro, pequequeñas, medianas y grandes empresas del PERÚ </p>
-        </section>
-
-        <section id="about" class="section">
-            <h2>NOTICIAS</h2>
-            <li>SIRE</li>
-            <a href="https://www.gob.pe/institucion/sunat/noticias/872986-sunat-facilita-uso-del-sistema-integrado-de-registros-electronicos-sire">
-            <I1><img src="https://cdn.www.gob.pe/uploads/document/file/5486997/872986-sire-1.jpg" width="200"</I1>
-            </a>
-            <h2> </h2>
-            <li>PADRON DE CONTRIBUYENTES EN COBRANZA COACTIVA</li>
-            <a href="https://www.sunat.gob.pe/padronesnotificaciones/listaContrib-mayorDeudaExigible-CC.html">
-            <I1><img src="https://www.sunat.gob.pe/img/campanas/2024/c-listaIPCN-cc.jpg" width="200"</I1>
-            </a>
-
-        <section id="services" class="section">
-            <h2>SERVICIOS</h2>
-            <ul>
-                <li>Contabilidad de empresas</li>
-                <li>Asesoria de empresas</li>
-                <li>Regularizacion de contabilidad</li>
-                <li>Emision de comprobantes</li>
-            </ul>
-        </section>
-        <section id="facturacion" class="section">
-            <h2>FACTURACIÓN</h2>
-            <ul>
-                <li>Factura electronica</li>
-                <li>Boleta Electronica</li>
-                <li>Recibo por honorario</li>
-                <li>Nota de credito</li>
-            </ul>
-        </section>
-        <section id="contact" class="section">
-            <h2>CONTACTO</h2>
-            <p>Para consultas o reservas, no dudes en contactarnos:</p>
-            <p><strong>Celular:</strong> </p> +51 955374354
-            <p><strong>Facebook:</strong> Team contable</p>
-        </section>
+    <!-- MENU FOOTER -->
+    <div style="margin:15px 0;">
+        <a href="#home" style="color:white; margin:0 10px; text-decoration:none;">Inicio</a>
+        <a href="#services" style="color:white; margin:0 10px; text-decoration:none;">Servicios</a>
+        <a href="#courses" style="color:white; margin:0 10px; text-decoration:none;">Cursos</a>
+        <a href="#contact" style="color:white; margin:0 10px; text-decoration:none;">Contacto</a>
     </div>
 
-    <footer class="footer">
-        <p>&copy; 2024 Tean Contable. Todos los derechos reservados.</p>
-    </footer>
+    <hr style="border:0; border-top:1px solid rgba(255,255,255,0.3); margin:15px 0;">
+
+    <p style="margin:0; font-size:14px;">
+        © 2026 Perzox Contadores - Todos los derechos reservados
+    </p>
+
+</footer>
+
 </body>
 </html>
